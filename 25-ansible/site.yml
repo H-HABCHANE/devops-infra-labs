@@ -33,6 +33,7 @@
         owner: root
         group: root
         mode: "0600"
+      no_log: true # ne jamais afficher le secret (sortie, --diff, logs de CI)
 
     - name: Démarrer nginx
       ansible.builtin.service:
