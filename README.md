@@ -15,7 +15,8 @@ Fil conducteur : un **restaurant** (prix TTC des plats, menu, site vitrine, cart
 | 4 | Linux, réseau, Bash, Git | [`12-bash`](12-bash/) | Script de diagnostic DNS → port → HTTP avec codes de sortie, rebase et résolution de conflit |
 | 5 | AWS (console) | — | IAM (moindre privilège, rôles), VPC sur mesure, EC2 + SSH, déploiement Docker, S3 privé, CloudWatch, nettoyage complet |
 | 6 | Terraform | [`22-terraform-bases`](22-terraform-bases/), [`23-terraform-docker`](23-terraform-docker/) | Cycle init/plan/apply, state, drift, modules, refactoring avec `moved`, destroy |
-| 6 bis | Ansible | [`25-ansible`](25-ansible/) | Inventaire, playbook idempotent, modèles Jinja2, handlers, sur des serveurs simulés en conteneurs |
+| 6 bis | Ansible | [`25-ansible`](25-ansible/) | Inventaire, playbook idempotent, modèles Jinja2, handlers, sur des serveurs simulés en conteneurs puis sur une EC2 |
+| 6 ter | Terraform sur AWS | [`29-terraform-aws`](29-terraform-aws/) | VPC, groupe de sécurité et EC2 en code, identifiants temporaires, inventaire Ansible généré, destroy vérifié |
 | 7 | Supervision | [`26-prometheus`](26-prometheus/) | Prometheus, Grafana, alertes, Alertmanager, sonde boîte noire, incident simulé et post-mortem |
 | 8-9 | Projet final | [restaurant-api](https://github.com/H-HABCHANE/restaurant-api) | API FastAPI instrumentée, CI, Kubernetes, IaC, supervision |
 

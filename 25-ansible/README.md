@@ -14,12 +14,16 @@ EC2 : SSH, utilisateur `ubuntu`, `sudo`, Python.
 | `site.yml` | le playbook : nginx installé, configuré et démarré |
 | `templates/` | modèles Jinja2 de la configuration nginx et de la page d'accueil |
 
+Le même playbook configure aussi une **vraie instance EC2** créée par Terraform : voir
+[`29-terraform-aws`](../29-terraform-aws/), qui génère `inventaire-aws.ini` (fichier non versionné).
+
 ## Le playbook
 
 1. installer nginx (`apt`, cache valide 1 h) ;
 2. déposer la configuration du site depuis un modèle → **notifie** le handler « Recharger nginx » ;
 3. déposer une page d'accueil personnalisée par serveur (`{{ inventory_hostname }}`) ;
-4. déposer un fichier de configuration sensible en `0600` (propriétaire root) ;
+4. déposer un fichier de configuration sensible en `0600` (propriétaire root), avec `no_log: true` pour que la valeur
+   n'apparaisse jamais dans la sortie, `--diff` ou les logs ;
 5. démarrer nginx et l'activer au démarrage.
 
 ## Lancer
